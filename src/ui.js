@@ -9,7 +9,6 @@ const ui = (() => {
     const { main, description } = weather.weather[0];
     const { name } = weather;
     const curDate = Date();
-
     document.getElementById('date').innerText = `${curDate}`;
     document.getElementById('name').innerText = `${name}, ${weather.sys.country} - ${Math.round(temp)}º${unit}`;
     document.getElementById('description').innerText = `${description.toUpperCase()} - ${main}`;
