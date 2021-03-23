@@ -7,7 +7,7 @@
 1. User can search a weather details based on city
 2. User can toggle between the tempearture units
 
-## Future Feature (v1.12)
+## Future Feature (v1.10)
 
 1. Improve the UI
 2. Add a feature to search weather details by longitude and latitude
