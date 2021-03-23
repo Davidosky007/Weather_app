@@ -1,9 +1,13 @@
 import data from './data';
 import ui from './ui';
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-confusing-arrow */
-/* eslint-disable no-unused-expressions */
-const controller = ((data, ui) => {
+
+const renderError = () => {
+  const errorContainer = document.getElementById('error-msg');
+  errorContainer.textContent = 'Sorry... The city was not found.';
+  setTimeout(() => { document.getElementById('error-msg').innerHTML = ''; }, 5000);
+};
+// eslint-disable-next-line no-unused-vars
+const controller = ((getWeather, ui) => {
   let wD;
   let units = 'F';
   const toggleUnits = (units) => (units === 'F' ? 'imperial' : 'metric');
@@ -13,15 +17,16 @@ const controller = ((data, ui) => {
     searchVal.value = '';
   };
 
+
   /* eslint-disable consistent-return */
   const defaultWeather = async (city = 'Lagos', unit = 'imperial') => {
     try {
-      const result = await data.getWeather(city, unit);
+      const result = await getWeather(city, unit);
       ui.renderPage(result, units);
       wD = await result;
       return result;
     } catch (e) {
-      return e;
+      renderError();
     }
   };
 
@@ -29,6 +34,7 @@ const controller = ((data, ui) => {
     if (event.target.id === 'searchInput') {
       resetValue(searchVal);
     } else if (event.target.id === 'toggeleUnits') {
+      // eslint-disable-next-line no-unused-expressions
       event.peventDefault;
       units = units === 'F' ? 'C' : 'F';
       defaultWeather(wD.name, toggleUnits(units));

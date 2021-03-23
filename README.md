@@ -30,7 +30,7 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 1. `git clone https://github.com/Davidosky007/Weather_app.git`
 2. `cd Weather_app`
