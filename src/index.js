@@ -1,6 +1,8 @@
 import data from './data';
 import ui from './ui';
-
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-confusing-arrow */
+/* eslint-disable no-unused-expressions */
 const controller = ((data, ui) => {
   let wD;
   let units = 'F';
@@ -12,7 +14,7 @@ const controller = ((data, ui) => {
   };
 
   /* eslint-disable consistent-return */
-  const defaultWeather = async (city = 'Accra', unit = 'imperial') => {
+  const defaultWeather = async (city = 'Lagos', unit = 'imperial') => {
     try {
       const result = await data.getWeather(city, unit);
       ui.renderPage(result, units);
