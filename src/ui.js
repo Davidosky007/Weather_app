@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 
 const ui = (() => {
   const renderPage = async (weather, unit = 'F') => {
