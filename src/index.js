@@ -1,10 +1,17 @@
 import data from './data';
 import ui from './ui';
+import photo from './images';
 
 const renderError = () => {
   const errorContainer = document.getElementById('error-msg');
   errorContainer.textContent = 'Sorry... The city was not found.';
   setTimeout(() => { document.getElementById('error-msg').innerHTML = ''; }, 5000);
+};
+
+const displayBackgroundImage = async (searchVal) => {
+  const photoPath = await photo(searchVal);
+  const body = document.querySelector('body');
+  body.style.backgroundImage = `url(${photoPath})`;
 };
 // eslint-disable-next-line no-unused-vars
 const controller = ((getWeather, ui) => {
@@ -33,6 +40,7 @@ const controller = ((getWeather, ui) => {
   const handleClick = (event) => {
     if (event.target.id === 'searchInput') {
       resetValue(searchVal);
+      displayBackgroundImage(searchVal.value);
     } else if (event.target.id === 'toggeleUnits') {
       // eslint-disable-next-line no-unused-expressions
       event.peventDefault;

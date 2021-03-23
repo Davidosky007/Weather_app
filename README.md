@@ -26,7 +26,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://davidosky007.github.io/Weather_app/)
+[Live Demo Link](https://my-weada-app.netlify.app/)
 
 ## Getting Started
 
