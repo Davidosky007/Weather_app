@@ -1,6 +1,6 @@
 import data from './data';
 import ui from './ui';
-import photo from './images';
+
 
 const renderError = () => {
   const errorContainer = document.getElementById('error-msg');
@@ -8,10 +8,9 @@ const renderError = () => {
   setTimeout(() => { document.getElementById('error-msg').innerHTML = ''; }, 5000);
 };
 
-const displayBackgroundImage = async (searchVal) => {
-  const photoPath = await photo(searchVal);
+const displayBackgroundImage = () => {
   const body = document.querySelector('body');
-  body.style.backgroundImage = `url(${photoPath})`;
+  body.style.backgroundImage = 'url(https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200 )';
 };
 // eslint-disable-next-line no-unused-vars
 const controller = ((getWeather, ui) => {
@@ -40,7 +39,7 @@ const controller = ((getWeather, ui) => {
   const handleClick = (event) => {
     if (event.target.id === 'searchInput') {
       resetValue(searchVal);
-      displayBackgroundImage(searchVal.value);
+      displayBackgroundImage();
     } else if (event.target.id === 'toggeleUnits') {
       // eslint-disable-next-line no-unused-expressions
       event.peventDefault;
